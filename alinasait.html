@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Для Алины 💜</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;display:grid;place-items:center;
+ padding:20px;color:white;text-align:center;
+ font-family:Georgia,serif;
+ background:radial-gradient(circle at top,#633c75,#21132f 65%,#100b19);
+}
+.card{
+ max-width:650px;width:100%;padding:45px 25px;
+ border:1px solid #ffffff35;border-radius:30px;
+ background:#ffffff12;box-shadow:0 20px 70px #0007;
+}
+.small{letter-spacing:4px;color:#e8c5ff;font:12px Arial}
+h1{font-size:clamp(55px,12vw,90px);color:#ffc6e4;margin:25px 0}
+p{font-size:21px;line-height:1.7;color:#f8eafa}
+.flowers{font-size:42px}
+button{
+ margin-top:25px;padding:16px 28px;border:0;border-radius:30px;
+ background:linear-gradient(90deg,#ffacd4,#c9a4ff);
+ color:#32183b;font-size:17px;font-weight:bold;cursor:pointer
+}
+#secret{display:none;margin-top:30px;font-size:25px;color:#ffd4eb;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="card">
+ <div class="small">СПЕЦИАЛЬНО ДЛЯ ТЕБЯ</div>
+ <div class="flowers">🌷 ✨ 🌷</div>
+ <h1>Алина</h1>
+ <p>
+ я сделал этот маленький сайт специально для тебя
+ ты особенная, и я хочу, чтобы сегодня
+ у тебя появилась ещё одна причина улыбнуться. 💗
+ </p>
+ <button onclick="surprise()">открыть сюрприз 💜</button>
+ <div id="secret">
+   алина, ты невероятная! 💖<br>
+   пусть каждый твой день будет наполнен
+   счастьем, улыбками и любовью Я ЛЮБЛЮ ТЕБЯЯЯ 🌸
+ </div>
+ <p style="font-size:15px;color:#d9c4e8">
+ С теплом и улыбкой ♥
+ </p>
+</div>
+<script>
+function surprise(){
+ document.getElementById('secret').style.display='block';
+ document.querySelector('button').innerText='Ты заслуживаешь счастья 💗';
+ for(let i=0;i<25;i++){
+  let h=document.createElement('div');
+  h.innerText=['💗','💜','🌸','✨'][Math.floor(Math.random()*4)];
+  h.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:100vh;font-size:25px;pointer-events:none;animation:up 4s linear forwards`;
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+ }
+}
+</script>
+<style>
+@keyframes up{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+</style>
+</body>
+</html>
